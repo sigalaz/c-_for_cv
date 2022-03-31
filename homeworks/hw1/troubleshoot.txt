@@ -1,0 +1,4 @@
+Task 2:
+	- When building the library by hand I had problems with the include directory of the ipb_arithmetic library. This was because the #include wasn't looking the include folder by default, but instead, it was looking the src, so as a work around  I had to set the #include path relative to that.
+	- TODO: fix this relative path problem so I can include without the need to indicate the relative path but instead only de .hpp name
+ 
