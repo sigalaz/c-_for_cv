@@ -1,0 +1,4 @@
+/home/sebastian/Documents/learn/C++/c-_for_cv/homeworks/hw1/task_2/build/CMakeFiles/ipb_arithmetic.dir
+/home/sebastian/Documents/learn/C++/c-_for_cv/homeworks/hw1/task_2/build/CMakeFiles/main.dir
+/home/sebastian/Documents/learn/C++/c-_for_cv/homeworks/hw1/task_2/build/CMakeFiles/edit_cache.dir
+/home/sebastian/Documents/learn/C++/c-_for_cv/homeworks/hw1/task_2/build/CMakeFiles/rebuild_cache.dir
