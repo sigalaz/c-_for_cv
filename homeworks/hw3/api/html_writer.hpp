@@ -75,7 +75,7 @@ void AddImage(const std::string &img_path, float score, bool highlight = false);
 /**New Function (not part of the original assignment)
 check if the format of the image is either png or jpg
 **/
-bool CheckImageFormat(const std::string &img_path);
+void CheckImageFormat(const std::string &img_path);
 
 } // namespace html_writer
 

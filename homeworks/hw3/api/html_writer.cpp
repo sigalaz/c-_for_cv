@@ -13,57 +13,69 @@ void OpenDocument() {
 void CloseDocument() { std::cout << "</html>" << std::endl; }
 
 void AddCSSStyle(const std::string &stylesheet) {
-  std::cout << " <head>" << std::endl;
-  std::cout << "  <link> rel= \"text/css\" href=\"" << stylesheet << "\" "
+  std::cout << "<head>" << std::endl;
+  std::cout << "  <link rel= \"text/css\" href=\"" << stylesheet << "\" /> "
             << std::endl;
-  std::cout << " <head>" << std::endl;
+  std::cout << "</head>" << std::endl;
 }
 
 void AddTitle(const std::string &title) {
-  std::cout << " <title>" << title << "/title" << std::endl;
+  std::cout << "<title>" << title << "</title>" << std::endl;
 }
 
 void OpenBody() { std::cout << "<body>" << std::endl; }
 
 void CloseBody() { std::cout << "</body>" << std::endl; }
 
-void OpenRow() { std::cout << "<div class=\" row \">" << std::endl; }
+void OpenRow() { std::cout << "  <div class=\"row\">" << std::endl; }
 
-void CloseRow() { std::cout << "</div>" << std::endl; }
+void CloseRow() { std::cout << "  </div>" << std::endl; }
 
-bool CheckImageFormat(const std::string &img_path) {
+void CheckImageFormat(const std::string &img_path) {
   std::filesystem::path file_path;
   std::string filename;
+  std::string file_extension;
 
   file_path = img_path;
-  filename == file_path.filename();
+  filename = file_path.filename();
+  file_extension = file_path.extension();
 
-  std::cout << file_path.filename() << std::endl;
-  std::cout << file_path.extension() << std::endl;
+  std::string png_extension = ".png";
+  std::string jpg_extension = ".jpg";
+  std::string test = ".png";
 
-  if (filename == ".png") {
-    std::cout << "True" << std::endl;
-    return true;
-  } else {
-    std::cout << "False" << std::endl;
-    return false;
+  // std::cout << file_path.filename() << std::endl;
+  // std::cout << file_path.extension() << std::endl;
+
+  if (file_extension.compare(png_extension) != 0 &&
+      file_extension.compare(jpg_extension) != 0) {
+    // std::cout << "True, the extension file is: " << file_extension <<
+    // std::endl;
+    std::cerr << "Error, the file  " << file_path << " is neither jpg or png"
+              << std::endl;
+    std::exit(EXIT_FAILURE);
   }
-
-  // return 0;
 }
 
 void AddImage(const std::string &img_path, float score, bool highlight) {
-  std::stringstream img_name_type{img_path};
+  std::filesystem::path file_path;
+  file_path = img_path;
 
-  std::string img_type;
-  std::string img_name;
+  std::string filename = file_path.filename();
 
-  img_name_type >> img_type >> img_name;
+  CheckImageFormat(img_path);
 
-  std::cout << "    <div class = \"column\">" << std::endl;
-  std::cout << "     <h2>"
-            << "\"" << img_path << "\""
-            << "/>" << std::endl;
+  if (highlight) {
+    std::cout << "    <div class = \"column\" style= \"border : 5px solid "
+                 "green;> \""
+              << std::endl;
+  } else {
+    std::cout << "    <div class = \"column\">" << std::endl;
+  }
+  std::cout << "      <h2>" << filename << "</h2>" << std::endl;
+  std::cout << "      <img src=" << file_path << "/>" << std::endl;
+
+  std::cout << "      <p>score = " << score << "</p>" << std::endl;
 }
 
 } // namespace html_writer
