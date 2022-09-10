@@ -1,6 +1,12 @@
 #include "../api/html_writer.hpp"
 #include <iostream>
 
+#include <array>
+#include <tuple>
+#include <vector>
+
+#include "fmt/args.h"
+
 int main() {
 
   html_writer::OpenDocument();
