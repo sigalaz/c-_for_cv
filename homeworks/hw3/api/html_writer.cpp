@@ -14,8 +14,8 @@ void CloseDocument() { std::cout << "</html>" << std::endl; }
 
 void AddCSSStyle(const std::string &stylesheet) {
   std::cout << "<head>" << std::endl;
-  std::cout << "  <link rel= \"text/css\" href=\"" << stylesheet << "\" /> "
-            << std::endl;
+  std::cout << "  <link rel=\"Stylesheet\" type=\"text/css\" href=\""
+            << stylesheet << "\" /> " << std::endl;
   std::cout << "</head>" << std::endl;
 }
 
@@ -66,16 +66,18 @@ void AddImage(const std::string &img_path, float score, bool highlight) {
   CheckImageFormat(img_path);
 
   if (highlight) {
-    std::cout << "    <div class = \"column\" style= \"border : 5px solid "
+    std::cout << "    <div class=\"column\" style= \"border : 5px solid "
                  "green;> \""
               << std::endl;
   } else {
-    std::cout << "    <div class = \"column\">" << std::endl;
+    std::cout << "    <div class=\"column\">" << std::endl;
   }
   std::cout << "      <h2>" << filename << "</h2>" << std::endl;
   std::cout << "      <img src=" << file_path << "/>" << std::endl;
 
   std::cout << "      <p>score = " << score << "</p>" << std::endl;
+
+  std::cout << "    </div>" << std::endl;
 }
 
 } // namespace html_writer

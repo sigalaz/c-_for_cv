@@ -9,7 +9,7 @@ int main() {
   image_browser::ScoredImage img2("data/000100.png", 0.08);
   image_browser::ScoredImage img3("data/000000.png", 0.05);
 
-  image_browser::ImageRow a = {img1, img1, img1};
+  image_browser::ImageRow a = {img1, img2, img3};
   image_browser::ImageRow b = {img2, img2, img2};
 
   std::vector<image_browser::ImageRow> img_set = {a, b};
@@ -20,7 +20,18 @@ int main() {
   html_writer::AddTitle("Hello, this html file was generated from C++");
   html_writer::AddCSSStyle("style.css");
   html_writer::OpenBody();
-  image_browser::AddFullRow(a, false);
+
+  html_writer::OpenRow();
+  for (int i = 0; i < 3; ++i) {
+    html_writer::AddImage(std::get<0>(a[i]), std::get<1>(a[i]), false);
+  }
+  html_writer::CloseRow();
+
+  html_writer::OpenRow();
+  for (int i = 0; i < 3; ++i) {
+    html_writer::AddImage(std::get<0>(a[i]), std::get<1>(a[i]), false);
+  }
+  html_writer::CloseRow();
   /*
       html_writer::OpenRow();
       html_writer::AddImage("data/000000.png", 0.05, false);
