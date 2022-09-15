@@ -21,13 +21,15 @@ void CreateImageBrowser(const std::string &title, const std::string &stylesheet,
   html_writer::AddTitle(title);
   html_writer::AddCSSStyle(stylesheet);
   html_writer::OpenBody();
-  int number_of_elements = rows.size();
 
-  /*
-  for (int i = 0; i < number_of_elements; ++i) {
-    AddFullRow(rows[i]);
+  for (int i = 0; i < rows.size(); ++i) {
+    if (i == 0) {
+      AddFullRow(rows[i], true);
+    } else {
+      AddFullRow(rows[i]);
+    }
   }
-*/
+
   html_writer::CloseBody();
   html_writer::CloseDocument();
 }
