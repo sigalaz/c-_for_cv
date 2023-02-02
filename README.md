@@ -7,7 +7,7 @@ Official webpage with lecture videos, slides and homeworks: https://www.ipb.uni-
 **Current progress**:
 - [Homework 1](https://github.com/sigalaz/c-_for_cv/tree/main/homeworks/hw1) Finnished!
 - [Homework 2](https://github.com/sigalaz/c-_for_cv/tree/main/homeworks/hw2) Finnished!
-- Homework 3
+- [Homework 3](https://github.com/sigalaz/c-_for_cv/tree/main/homeworks/hw3) Finnished!
 - Homework 4
 - Homework 5
 - Homework 6
