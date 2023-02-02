@@ -44,9 +44,6 @@ void CheckImageFormat(const std::string &img_path) {
   std::string jpg_extension = ".jpg";
   std::string test = ".png";
 
-  // std::cout << file_path.filename() << std::endl;
-  // std::cout << file_path.extension() << std::endl;
-
   if (file_extension.compare(png_extension) != 0 &&
       file_extension.compare(jpg_extension) != 0) {
     // std::cout << "True, the extension file is: " << file_extension <<
