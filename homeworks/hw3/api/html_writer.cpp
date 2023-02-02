@@ -64,7 +64,7 @@ void AddImage(const std::string &img_path, float score, bool highlight) {
 
   if (highlight) {
     std::cout << "    <div class=\"column\" style= \"border : 5px solid "
-                 "green;> \""
+                 "green;\" >"
               << std::endl;
   } else {
     std::cout << "    <div class=\"column\">" << std::endl;
