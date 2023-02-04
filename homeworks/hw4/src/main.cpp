@@ -1,2 +1,5 @@
+#include <iostream>
 
-int main() { return 0; }
+int main() { 
+	std::cout << "Hellos world" << std::endl;
+	return 0; }
