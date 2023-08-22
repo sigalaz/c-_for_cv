@@ -30,13 +30,4 @@ int main() {
       std::exit(EXIT_SUCCESS);
     }
   }
-  /*
-
-  std::cout << "Please input any number from 0 to 99" << std::endl;
-  std::cin >> guessed_number;
-  std::cout << "number = " << guessed_number << std::endl;
-  if (guessed_number > 99) {
-    std::cerr << "boring error message" << std::endl;
-  }
-*/
 }
