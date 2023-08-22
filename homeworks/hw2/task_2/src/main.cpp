@@ -3,7 +3,7 @@
 
 int main(int argc, char const *argv[]) {
 
-  std::cout << "Got" << argc << "Params\n";
+  std::cout << "Got " << argc << " Params\n";
 
   if (argc != 3) {
     std::cerr << "Error, number of arguments is different than 2 " << std::endl;
